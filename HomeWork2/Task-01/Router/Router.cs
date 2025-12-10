@@ -1,5 +1,6 @@
 ﻿namespace Task_01;
 
+
 class RouterOptions
 {
     private int optionNumber;
