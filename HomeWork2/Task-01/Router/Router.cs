@@ -1,18 +1,23 @@
-﻿namespace Task_01;
+﻿using Task_01.Users;
 
+namespace Task_01;
 
 class RouterOptions
 {
     private int optionNumber;
     private Wallet wallet;
+    private UsersManager usersManager;
 
     public RouterOptions()
     {
+
         wallet = new Wallet();
+        usersManager = new UsersManager();
     }
 
+
     // this method for show option list and run a options - send to switch case for run
-    public void runPayAndDeps()
+    public void showAndSelectOptions()
     {
         while (optionNumber != 10)
         {
@@ -20,7 +25,8 @@ class RouterOptions
             Console.WriteLine("[1] - Show Cash");
             Console.WriteLine("[2] - Deposit");
             Console.WriteLine("[3] - Withdraw");
-            Console.WriteLine("[4] - Transfer");
+            Console.WriteLine("[4] - Register User");
+            Console.WriteLine("[5] - Show Users");
             Console.WriteLine("[10] - Exit");
             optionNumber = int.Parse(Console.ReadLine());
             Console.Clear();
@@ -48,12 +54,14 @@ class RouterOptions
                 wallet.Withdraw();
                 break;
             case 4:
-                // transfer other wallet
-                // در کلاس wallet یک متد جدید بساز:
-                // public void Transfer(double amount, wallet targetWallet)
+                usersManager.RegisterUser();
                 break;
-            case 8:
-                // reset bulunce
+
+            case 5:
+                usersManager.ShowUsers();
+                break;
+            case 9:
+                // log out
                 break;
             case 10:
                 Utilities.printAndReadKyeClear($"Youre Wellcome ...");

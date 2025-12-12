@@ -9,13 +9,13 @@ class Program
     {
         // check name and pass for opened menu page
         Auth auth = new Auth();
-        auth.checkIsLogin();
+        auth.LoginOrRegistration();
 
         // after login for work with my wallet
         if (auth.isLogin == true)
         {
             RouterOptions routerOptions = new RouterOptions();
-            routerOptions.runPayAndDeps();
+            routerOptions.showAndSelectOptions();
         }
 
     }

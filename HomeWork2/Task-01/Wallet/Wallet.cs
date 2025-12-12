@@ -17,7 +17,7 @@ class Wallet
             return;
         }
         balance += amount;
-        Utilities.printAndReadKyeClear($"the amount +{amount}$ deposited successfully .");
+        Utilities.printAndReadKyeClear($"the amount +{amount} $ deposited successfully .");
     }
 
     // Withdraw is a method for mines youre balanse
@@ -40,14 +40,33 @@ class Wallet
         else
         {
             balance -= amount;
-            Utilities.printAndReadKyeClear($"the amount -{amount}$ withdrawed successfully !");
+            Utilities.printAndReadKyeClear($"the amount -{amount} $ withdrawed successfully !");
         }
     }
 
     // show balance is a method for show all mony in youre wallet
     public void ShowBalance()
     {
-        Utilities.printAndReadKyeClear($"The balance is : {balance}$");
+        Utilities.printAndReadKyeClear($"The balance is : {balance} $");
     }
+
+
+    // transfer mony in my wallet ..
+    // public void Transfer(double amount, int destinationCardNumber)
+    // {
+    //     if (amount > balance)
+    //     {
+    //         Utilities.printTextAndSetCustomColor("youre amount > balance , pleasr chose lower number !");
+    //     }
+    //     else
+    //     {
+            
+    //     }
+    // }
+
+
+
+
+
 }
 
