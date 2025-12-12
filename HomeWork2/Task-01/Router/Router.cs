@@ -8,13 +8,11 @@ class RouterOptions
     private Wallet wallet;
     private UsersManager usersManager;
 
-    public RouterOptions()
+    public RouterOptions(UsersManager manager)
     {
-
         wallet = new Wallet();
-        usersManager = new UsersManager();
+        usersManager = manager; // از همان instance مشترک استفاده می‌کند
     }
-
 
     // this method for show option list and run a options - send to switch case for run
     public void showAndSelectOptions()

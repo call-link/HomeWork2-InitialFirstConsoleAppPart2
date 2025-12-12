@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Reflection.Metadata;
 using System.Threading.Tasks.Dataflow;
+using Task_01.Users;
 namespace Task_01;
 
 class Program
 {
     static void Main()
     {
-        // check name and pass for opened menu page
-        Auth auth = new Auth();
+        UsersManager usersManager = new UsersManager();
+
+        Auth auth = new Auth(usersManager);
+
         auth.LoginOrRegistration();
 
         // after login for work with my wallet
         if (auth.isLogin == true)
         {
-            RouterOptions routerOptions = new RouterOptions();
+            RouterOptions routerOptions = new RouterOptions(usersManager);
             routerOptions.showAndSelectOptions();
         }
-
     }
+
 }
-
-
-
 
 
 

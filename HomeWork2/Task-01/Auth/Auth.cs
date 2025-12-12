@@ -1,24 +1,23 @@
-﻿namespace Task_01;
+﻿using Task_01.Users;
+
+namespace Task_01;
 
 class Auth
 {
-
-    // وریفای کردن و گرفتن مقادیر از کاربر باید جدا از هم باشن بنطرم
-    private string username;
-    private string password;
+    private UsersManager usersManager;
     public bool isLogin = false;
     public int tryCount = 3;
-    public int LoginRegisterNumber;
-
-    public string Username => username;
-    public string Password => password;
-    Users.UsersManager usersManager = new Users.UsersManager();
+    public Auth(UsersManager manager)
+    {
+        usersManager = manager;
+    }
+    // Users.UsersManager usersManager = new Users.UsersManager();
     public bool LoginOrRegistration()
     {
         Utilities.printTextAndSetCustomColor("[ Login | Register Page ]");
         Console.WriteLine("[1]- Register ");
         Console.WriteLine("[2]- Login ");
-        LoginRegisterNumber = int.Parse(Console.ReadLine());
+        int LoginRegisterNumber = int.Parse(Console.ReadLine());
         while (tryCount > 0)
         {
             Console.Clear();
@@ -36,8 +35,8 @@ class Auth
             {
                 // login page
                 Utilities.printTextAndSetCustomColor("Login Page \n");
-                username = GetUsername();
-                password = GetPassword();
+                string username = GetUsername();
+                string password = GetPassword();
 
                 var findUser = usersManager.FindUser(username, password);
                 if (findUser != null)
