@@ -50,18 +50,9 @@ class Wallet
         Utilities.printAndReadKyeClear($"The balance is : {balance} $");
     }
 
-
-    // transfer mony in my wallet ..
+    
     // public void Transfer(double amount, int destinationCardNumber)
     // {
-    //     if (amount > balance)
-    //     {
-    //         Utilities.printTextAndSetCustomColor("youre amount > balance , pleasr chose lower number !");
-    //     }
-    //     else
-    //     {
-            
-    //     }
     // }
 
 
