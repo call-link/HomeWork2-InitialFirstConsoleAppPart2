@@ -5,6 +5,7 @@ class Program
 {
     static void Main()
     {
+        Console.Clear();
         Console.Write("Enter array size: ");
         int size = int.Parse(Console.ReadLine());
 
