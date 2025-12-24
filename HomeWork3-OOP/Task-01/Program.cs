@@ -1,47 +1,65 @@
-﻿using System;
-
+﻿
 class Program
 {
     static void Main()
     {
-        // string[] args
-        // RunArgs(args);
-        Person p = new();
-        p.Name = "hadi";
-        p.SetAge(12);
-        p.sayHello();
+        Engine engine = new Engine(250);
+        Car car = new Car("BMW", engine);
+
+        car.Start();
+        car.Accelerate(60);
+        car.ShowInfo();
 
     }
+    class Engine
+    {
+        public int HorsePower { get; }
+
+        public Engine(int horsePower)
+        {
+            HorsePower = horsePower;
+        }
+
+        public void Start()
+        {
+            WriteLine($"Engine with {HorsePower} HP started.");
+        }
+    }
+
 
     class Car
     {
-        public string Brand;
-
+        public string Brand { get; }
         private int Speed;
+        private Engine engine;
 
+        public Car(string brand, Engine engine)
+        {
+            Brand = brand;
+            this.engine = engine;
+        }
         public void Accelerate(int amount)
         {
-            if (true)
+            if (amount < 0)
             {
-                
-            }
-        }
-
-        public void SetSpeed(int value)
-        {
-            if (value < 0)
-            {
-                WrietLine("invalid speed values");
+                WriteLine("Invalid acceleration!");
                 return;
             }
-            Speed = value ;
-        }
-        public int GetSpeed()
-        {
-            return Speed;
-        }
 
+            Speed += amount;
+        }
+        public void Start()
+        {
+            engine.Start();
+            WriteLine($"{Brand} car started.");
+        }
+        public void ShowInfo()
+        {
+            WriteLine($"Car: {Brand}, Speed: {Speed}, HP: {engine.HorsePower}");
+        }
     }
+
+   
 
 
 
