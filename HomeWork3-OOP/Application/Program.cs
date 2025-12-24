@@ -1,8 +1,12 @@
-﻿class Program
+﻿using Application;
+
+class Program
 {
     static void Main()
     {
-        WriteLine("Hello Application");
+        Person person = new();
+        person.Name = "hadi";
+        person.sayHello();
 
     }
 }
