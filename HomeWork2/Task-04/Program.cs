@@ -34,7 +34,6 @@ class ArrayAnalyzer
 {
     public void AnalyzeArray(int[] array, ref int max, out double average)
     {
-        // اگر آرایه خالی باشد
         if (array.Length == 0)
         {
             max = 0;
@@ -43,7 +42,7 @@ class ArrayAnalyzer
         }
 
         int sum = 0;
-        max = array[0]; // مقدار اولیه max
+        max = array[0]; 
 
         foreach (int number in array)
         {

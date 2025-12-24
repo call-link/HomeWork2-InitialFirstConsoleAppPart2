@@ -10,7 +10,7 @@ class RouterOptions
 
     public RouterOptions(UsersManager manager)
     {
-        wallet = new Wallet();
+        wallet = new();
         usersManager = manager; // از همان instance مشترک استفاده می‌کند
     }
 
@@ -64,8 +64,6 @@ class RouterOptions
             case 10:
                 Utilities.printAndReadKyeClear($"Youre Wellcome ...");
                 break;
-
-
             default:
                 // invalid option
                 Console.WriteLine("Invalid Options, Try again!");

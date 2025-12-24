@@ -8,7 +8,7 @@ class Program
 {
     static void Main()
     {
-        UsersManager usersManager = new UsersManager();
+        UsersManager usersManager = new();
 
         Auth auth = new Auth(usersManager);
 

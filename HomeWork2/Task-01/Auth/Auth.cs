@@ -51,10 +51,7 @@ class Auth
                     tryCount--;
                     continue;
                 }
-
-
             }
-
         }
         isLogin = false;
         return false;
